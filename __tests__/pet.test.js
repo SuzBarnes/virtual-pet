@@ -8,12 +8,12 @@ describe('constructor', () => {
       const pet = new Pet('Fido');
       expect(pet.name).toEqual('Fido');
     });
-  });
+
     it ('has an initial age of 0', () => {
       const pet = new Pet('Fido');
       expect(pet.age).toEqual(0);
     });
-  
+});
 
   
   describe('growUp', () => {
@@ -84,3 +84,37 @@ expect (pet.fitness).toEqual(7);
     
     expect(pet.hunger).toEqual(0);
   });
+
+  describe('checkUp', () => {
+  it('returns "I need a walk" when fitness <=3', () => {
+    const pet = new Pet ('Fido');
+    pet.fitness=3;
+    pet.hunger=1;
+    
+    expect (pet.checkUp()).toEqual('I need a walk');
+  });
+
+  it('returns "I am hungry" when hunger >=5 and fitness>3', () =>{
+    const pet = new Pet ('Fido');
+    pet.fitness = 5;
+    pet.hunger = 7;
+
+    expect (pet.checkUp()).toEqual('I am hungry');
+  });
+
+  it('returns "I am hungry AND I need a walk" when hunger >=5 and fitness <=3', () =>{
+    const pet = new Pet ('Fido');
+    pet.fitness = 3;
+    pet.hunger= 7;
+
+    expect (pet.checkUp()).toEqual('I am hungry AND I need a walk');
+  });
+
+  it('returns "I feel great!" when hunger <5 and fitness >3', () => {
+    const pet = new Pet ('Fido');
+    pet.fitness = 5;
+    pet.hunger = 2;
+
+    expect (pet.checkUp()).toEqual('I feel great!');
+  });
+});

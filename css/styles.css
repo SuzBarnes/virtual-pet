@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body{
+    height:100%;
+    display: flex;
+    justify-content: center; /* children are center aligned horizontal*/
+    align-items: center; /*vertical*/
+    background-color: black;
+}
+
+#viewport{
+    width: 975px;
+    height: 322px;
+    position: relative;
+    overflow-x: auto;
+    background-image: url('../images/room.png');
+}

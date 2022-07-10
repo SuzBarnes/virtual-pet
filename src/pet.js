@@ -9,6 +9,7 @@ function Pet(name) {
     this.age = STARTATZERO,
     this.hunger = STARTATZERO;
     this.fitness = STARTFITNESS;
+    this.babies = [];
     };
 
 Pet.prototype = {
@@ -62,5 +63,15 @@ this.hunger +=5;
       }
   };
 
+Pet.prototype.makeBaby = function (babyName) {
+    const baby = new Pet (babyName);
+    this.baby.unshift(babyName);
+};
+
+Pet.prototype.adoptBaby = function (baby) {
+    
+    this.babies.unshift (baby);
+
+};
 
 module.exports = Pet;

@@ -174,5 +174,15 @@ it('returns false when pet age >=30 or returns true when pet age <30', () => {
       });
     });
     });
+describe ('makeBaby', () => {
+  it ('makes 2 pet instances - 1 of which will be the child', () => {
+const pet = new Pet ('Fido');
+const babyName = new Pet ('Fred')
+
+pet.makeBaby(babyName);
+
+    expect (pet.baby).toEqual(1);
+  })
+})
 
 });

@@ -74,4 +74,8 @@ Pet.prototype.adoptBaby = function (baby) {
 
 };
 
-module.exports = Pet;
+if(typeof module !== 'undefined' && module.exports){
+    module.exports = Pet;
+} else {
+    window.pet= Pet;
+}

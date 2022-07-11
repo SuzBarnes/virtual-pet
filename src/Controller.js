@@ -5,7 +5,7 @@ class Controller {
 
     };
 
-initialiseHouse() {
+initialiseHouse() { /* for the room image to be placed as background */
     const backgrounds =[
         '../virtual-pet/images/room.png'
     ];
@@ -14,4 +14,55 @@ initialiseHouse() {
         backgroundIndex += 1;
 
 };
+
+renderPet(){ /*for the pet image to be put into the house*/
+    const pet = this.pet;
+    const petElement = document.querySelectory('#pet');
+};
+
+renderFoodBowl(){ /* empty food bowl image that stays there until filled for a few seconds */
+    const foodbowl = this.foodbowl;
+    const foodbowlElement = document.querySelector('#foodbowl');
 }
+
+/*namePet(){
+
+}*/
+
+/*growUp(){
+
+} */
+
+/*feedPet() {
+
+} */
+
+/* walkPet(){
+
+} */
+
+/*checkUp(){
+
+} */
+
+renderMessage(message){
+    const messageElement = document.createElement('div');
+    messageElement.id = 'message';
+    messageElement.innerHTML = message;
+
+    const viewport = document.querySelector('#viewport');
+    viewport.appendChild(messageElement);
+
+    setTimeout(() => {
+        viewport.removeChild(messageElement);
+    }, 3000)
+}
+
+};
+
+
+if(typeof module !== 'undefined' && module.exports) {
+    module.exports = Controller;
+} else {
+    window.Controller = Controller;
+};

@@ -17,3 +17,25 @@ body{
     overflow-x: auto;
     background-image: url('../images/room.png');
 }
+
+#pet{
+    width: 254px;
+    height: 322px;
+    position:relative;
+    left: 600px;
+    background-image: url("../images/bluey.png");
+}
+
+#foodbowl{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/dog-food.svg");
+    position: relative;
+    right:100%;
+    top: 70%;
+}
+
+#foodbutton{
+    align-items: center;
+    justify-content: center;
+}

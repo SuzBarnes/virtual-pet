@@ -1,7 +1,12 @@
+const Pet = require("./pet");
+
 class Controller {
     constructor (pet){
     this.pet = pet;
     this.initialiseHouse();
+    document.querySelector('#foodbutton').addEventListener('click', () => {
+        this.feedPet();
+    })
 
     };
 
@@ -33,10 +38,11 @@ renderFoodBowl(){ /* empty food bowl image that stays there until filled for a f
 
 } */
 
-/*feedPet() {
+feedPet() {
+const pet = this.pet;
+console.log(pet);
 
-} */
-
+};
 /* walkPet(){
 
 } */

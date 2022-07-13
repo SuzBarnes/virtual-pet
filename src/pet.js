@@ -10,13 +10,54 @@ function Pet(name) {
     this.hunger = STARTATZERO;
     this.fitness = STARTFITNESS;
     this.babies = [];
-    };
+
+    this.initialiseHouse;
+    
+    document.querySelector('#foodbutton').addEventListener('click', () => {
+        console.log(`hunger = ${this.hunger}`);
+        this.feedPet;
+        console.log(`hunger = ${this.hunger}`);
+    });
+
+    document.querySelector('#walkbutton').addEventListener('click', () => {
+        this.walk;
+        console.log(`fitness = ${this.fitness}`);
+    });
+
+    document.querySelector('#growupbutton').addEventListener('click', () =>
+    {
+        this.growUp;
+        console.log(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+    });
+
+    /*document.querySelector('#checkupbutton').addEventListener('click', () => {
+        this.checkUp;
+    })*/
 
 Pet.prototype = {
     get isAlive() {
         return this.age <30 && this.hunger <10 && this.fitness >0;
     }
 };
+Pet.prototype.initialiseHouse = function () { /* for the room image to be placed as background */
+    const backgrounds =[
+        '../virtual-pet/images/room.png'
+    ];
+    let backgroundIndex = 0;
+    window.document.querySelector('#viewport').style.backgroundImage= `url('${backgrounds[backgroundIndex%backgrounds.length]}')`;
+        backgroundIndex += 1;
+
+};
+
+Pet.prototype.renderPet = function () { /*for the pet image to be put into the house*/
+    const pet = this.pet;
+    const petElement = document.querySelectory('#pet');
+};
+
+Pet.prototype.renderFoodBowl = function () { /* empty food bowl image that stays there until filled for a few seconds */
+    const foodbowl = this.foodbowl;
+    const foodbowlElement = document.querySelector('#foodbowl');
+}
 
 Pet.prototype.growUp = function () {
     if (!this.isAlive){
@@ -52,7 +93,7 @@ this.hunger +=5;
       }
   };
 
-  Pet.prototype.feed = function () {
+  Pet.prototype.feedPet = function () {
     if (!this.isAlive){
         throw new Error ('Your pet is no longer alive :(');
     };
@@ -63,7 +104,7 @@ this.hunger +=5;
       }
   };
 
-Pet.prototype.makeBaby = function (babyName) {
+/* Pet.prototype.makeBaby = function (babyName) {
     const baby = new Pet (babyName);
     this.baby.unshift(babyName);
 };
@@ -72,6 +113,20 @@ Pet.prototype.adoptBaby = function (baby) {
     
     this.babies.unshift (baby);
 
+};*/
+
+/*this.prototype.renderMessage= function (message) {
+    const messageElement = document.createElement('div');
+    messageElement.id = 'message';
+    messageElement.innerHTML = message;
+
+    const viewport = document.querySelector('#viewport');
+    viewport.appendChild(messageElement);
+
+    setTimeout(() => {
+        viewport.removeChild(messageElement);
+    }, 3000)
+};*/
 };
 
 if(typeof module !== 'undefined' && module.exports){

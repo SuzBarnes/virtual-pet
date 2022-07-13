@@ -35,7 +35,37 @@ body{
     top: 70%;
 }
 
-#foodbutton{
+#foodbutton:focus{
     align-items: center;
     justify-content: center;
+    background-color: rgb(161, 230, 122);
+}
+
+#walkimage{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/walking-the-dog.svg");
+    position: relative;
+    left: -300%;
+    bottom: 53%;
+}
+#walkbutton:focus{
+    align-items: center;
+    justify-content: center;
+    background: rgb(161, 230, 122);
+}
+
+#growupimage{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/birthday-cake.svg");
+    position: relative;
+    left: 506%;
+    bottom: 136%;
+}
+
+#growupbutton:focus{
+    align-items: center;
+    justify-content: center;
+    background: rgb(161, 230, 122);
 }

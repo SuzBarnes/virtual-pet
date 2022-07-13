@@ -12,15 +12,21 @@
         <div id = "pet">
             <div id = "foodbowl">
                 <button id = "foodbutton">Give Food</button>
-            </div>
+                <div id = "walkimage">
+                    <button id = "walkbutton">WALKIES!</button>
+                </div>
+                <div id = "growupimage">
+                    <button id = "growupbutton">+1 year</button>
+                </div>
+             </div>
         </div>
         
 
     </div>
-    <script src="src/Controller.js"></script>
+    
     <script src="src/pet.js"></script>
     <script>
-        const controller = new Controller();
+        const pet = new Pet(name);
     </script>
 </body>
 </html>

@@ -16,21 +16,25 @@ class Pet {
         
         document.querySelector('#foodbutton').addEventListener('click', () => {
             this.feedPet();
-            console.log(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+           this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
             
         });
     
         document.querySelector('#walkbutton').addEventListener('click', () => {
             this.walk();
-            console.log(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+            this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
         });
     
         document.querySelector('#growupbutton').addEventListener('click', () =>
         {
             this.growUp();
-            console.log(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+            this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
         });
         
+        document.querySelector('#checkupbutton').addEventListener('click', () =>
+        {
+            this.renderMessage(`${this.checkUp()}`);
+        });
 
     /*document.querySelector('#checkupbutton').addEventListener('click', () => {
         this.checkUp();
@@ -120,18 +124,18 @@ Pet.prototype.adoptBaby = function (baby) {
 
 };*/
 
-/*this.prototype.renderMessage= function (message) {
+renderMessage (message) {
     const messageElement = document.createElement('div');
     messageElement.id = 'message';
     messageElement.innerHTML = message;
 
-    const viewport = document.querySelector('#viewport');
+    const viewport = document.querySelector('#rendermessage');
     viewport.appendChild(messageElement);
 
     setTimeout(() => {
         viewport.removeChild(messageElement);
     }, 3000)
-};*/
+};
 };
 
 if(typeof module !== 'undefined' && module.exports){
@@ -139,3 +143,13 @@ if(typeof module !== 'undefined' && module.exports){
 } else {
     window.pet= Pet;
 }
+
+/*To Do:
+- set up rendermessage with speech bubble in place with checkup function
+- set up a stats list that is updated
+- make bluey blink
+- update the checkup function with a ?stethescope
+- add something so you can name the pet at the start
+- add in when it is the birthday that confetti displays
+- update the pet to a ghost when they are dead
+*/

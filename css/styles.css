@@ -28,6 +28,7 @@ body{
     left: 55px;
 }
 
+
 #foodbowl{
     width: 100px;
     height: 100px;
@@ -37,10 +38,12 @@ body{
     
 }
 
-#foodbutton:focus{
+#foodbowl:hover{
     align-items: center;
     justify-content: center;
     background-color: rgb(161, 230, 122);
+    width: 100px;
+    height: 100px;
 }
 
 #walkimage{
@@ -52,10 +55,12 @@ body{
     bottom: 0px;
   
 }
-#walkbutton:focus{
+#walkimage:hover{
     align-items: center;
     justify-content: center;
     background: rgb(161, 230, 122);
+    width: 100px;
+    height: 100px;
 }
 
 #growupimage{
@@ -68,7 +73,7 @@ body{
     
 }
 
-#growupbutton:focus{
+#growupimage:hover{
     align-items: center;
     justify-content: center;
     background: rgb(161, 230, 122);
@@ -110,8 +115,35 @@ body{
     right: 0px;
   }
 
-  #checkupbutton:focus{
+  #checkupimage:hover{
+    position: absolute;
+    width: 100px;
+    height: 100px;
     align-items: center;
     justify-content: center;
     background: rgb(161, 230, 122);
+    
+  }
+  
+  #petname{
+    display:none;
+    position: fixed;
+    bottom:0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+  #form-petname{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  #form-petname input[type=text]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
   }

@@ -14,32 +14,28 @@ class Pet {
     
         this.initialiseHouse();
         
-        document.querySelector('#foodbutton').addEventListener('click', () => {
+        document.querySelector('#foodbowl').addEventListener('click', () => {
             this.feedPet();
            this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
             
         });
     
-        document.querySelector('#walkbutton').addEventListener('click', () => {
+        document.querySelector('#walkimage').addEventListener('click', () => {
             this.walk();
             this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
         });
     
-        document.querySelector('#growupbutton').addEventListener('click', () =>
+        document.querySelector('#growupimage').addEventListener('click', () =>
         {
             this.growUp();
-            this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+            this.renderMessage(`My name is ${this.name} I am ${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
         });
         
-        document.querySelector('#checkupbutton').addEventListener('click', () =>
+        document.querySelector('#checkupimage').addEventListener('click', () =>
         {
             this.renderMessage(`${this.checkUp()}`);
         });
 
-    /*document.querySelector('#checkupbutton').addEventListener('click', () => {
-        this.checkUp();
-        console.log(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
-    })*/
     };
     
 
@@ -70,7 +66,7 @@ renderFoodBowl() { /* empty food bowl image that stays there until filled for a 
 
 growUp() {
     if (!this.getisAlive()){
-        throw new Error ('Your pet is no longer alive :(');
+        this.renderMessage(`${this.name} is no longer alive :(`)
     };
 this.age += YEARSAGED;
 this.fitness -=3;
@@ -79,9 +75,10 @@ this.hunger +=5;
 
 checkUp() {
     if (!this.getisAlive()){
-        throw new Error ('Your pet is no longer alive :(');
-    };
-        if (this.fitness<=3 && this.hunger<5){
+        this.renderMessage(`${this.name} is no longer alive :(`)
+        
+    }
+        else if (this.fitness<=3 && this.hunger<5){
             return('I need a walk')
         } else if (this.hunger>=5 && this.fitness>3){
              return('I am hungry')
@@ -93,7 +90,7 @@ checkUp() {
   
   walk() {
     if (!this.getisAlive()){
-        throw new Error ('Your pet is no longer alive :(');
+        this.renderMessage(`${this.name} is no longer alive :(`)
     };
       if ((this.fitness + 4)<=MAXIMUM_FITNESS){
           this.fitness+= 4;
@@ -104,7 +101,7 @@ checkUp() {
 
  feedPet() {
     if (!this.getisAlive()){
-        throw new Error ('Your pet is no longer alive :(');
+        this.renderMessage(`${this.name} is no longer alive :(`)
     };
       if((this.hunger-3)>=MINIMUM_HUNGER){
           this.hunger-=3;
@@ -136,8 +133,9 @@ renderMessage (message) {
         viewport.removeChild(messageElement);
     }, 3000)
 };
-};
 
+
+};
 if(typeof module !== 'undefined' && module.exports){
     module.exports = Pet;
 } else {
@@ -145,10 +143,8 @@ if(typeof module !== 'undefined' && module.exports){
 }
 
 /*To Do:
-- set up rendermessage with speech bubble in place with checkup function
 - set up a stats list that is updated
 - make bluey blink
-- update the checkup function with a ?stethescope
 - add something so you can name the pet at the start
 - add in when it is the birthday that confetti displays
 - update the pet to a ghost when they are dead

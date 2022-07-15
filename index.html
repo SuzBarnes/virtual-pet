@@ -13,25 +13,28 @@
         <div id = "pet"> </div>
 
             <div id = "rendermessage" contenteditable></div>
+            <div id = "renderdeath"></div>
 
         <div id = "foodbowl">
-            <button id = "foodbutton">Give Food</button>
+            <img src = "images/dog-food.svg">
         </div>
                 <div id = "walkimage">
-                    <button id = "walkbutton">WALKIES!</button>
+                    <img src = "images/walking-the-dog.svg">
                 </div>
 
         <div id = "growupimage">
-         <button id = "growupbutton">+1 year</button>
-                
+            <img src ="images/birthday-cake.svg">
         </div>
         <div id = "checkupimage">
-            <button id = "checkupbutton">Check up!</button>
+            <img src="images/stethoscope-doctor.svg">
         </div>
     </div>
     
     <script src="src/pet.js"></script>
     <script>
+        let yourname = prompt("Hey there! What is your name?")
+        let name = prompt("What is my name?");
+        alert(`Hi ${yourname}! I love the name ${name}!`)
         const pet = new Pet(name);
     </script>
 </body>

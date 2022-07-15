@@ -1,0 +1,129 @@
+html {
+    height: 100%;
+}
+
+body{
+    height:100%;
+    display: flex;
+    justify-content: center; /* children are center aligned horizontal*/
+    align-items: center; /*vertical*/
+    background-color: black;
+    font-family: 'Patrick-Hand', cursive;
+
+}
+
+#viewport{
+    width: 975px;
+    height: 322px;
+    position: relative;
+    overflow-x: auto;
+    background-image: url('../images/room.png');
+}
+
+#pet{
+    width: 254px;
+    height: 322px;
+    position:absolute;
+    transform: rotateY(180deg);
+    background-image: url("../images/bluey.png");
+    left: 55px;
+}
+
+
+#foodbowl{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/dog-food.svg");
+    position:  absolute;
+    bottom: 20px;
+    
+}
+
+#foodbowl:hover{
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(161, 230, 122);
+    width: 100px;
+    height: 100px;
+}
+
+#walkimage{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/walking-the-dog.svg");
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+  
+}
+#walkimage:hover{
+    align-items: center;
+    justify-content: center;
+    background: rgb(161, 230, 122);
+    width: 100px;
+    height: 100px;
+}
+
+#growupimage{
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/birthday-cake.svg");
+    position: absolute;
+    right: 425px;
+    bottom: 115px;
+    
+}
+
+#growupimage:hover{
+    align-items: center;
+    justify-content: center;
+    background: rgb(161, 230, 122);
+}
+
+#rendermessage {
+    position:  absolute;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    line-height: 24px;
+    width: 300px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+    left: 285px;
+  }
+  
+  #rendermessage:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    left: 32px;
+    bottom: -24px;
+  }
+
+  #checkupimage{
+    position:absolute;
+    background-image: url("../images/stethoscope-doctor.svg");
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    right: 0px;
+  }
+
+  #checkupimage:hover{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    background: rgb(161, 230, 122);
+    
+  }
+  
+ 

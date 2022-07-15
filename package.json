@@ -1,10 +1,10 @@
 {
   "name": "virtual-pet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real pets are great, but they do have drawbacks. They smell. Your mum might be allergic to them. Maybe you just aren't allowed one in your flat.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
-const MAXIMUM_FITNESS = 10;
+const MAXIMUM_FITNESS = 100;
 const MINIMUM_HUNGER = 0;
 const STARTATZERO = 0;
-const STARTFITNESS = 10;
+const STARTFITNESS = 100;
 const YEARSAGED = 1;
 
 class Pet {
@@ -16,19 +16,19 @@ class Pet {
         
         document.querySelector('#foodbowl').addEventListener('click', () => {
             this.feedPet();
-           this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+           this.renderMessage(`My hunger is now at ${this.hunger}%`);
             
         });
     
         document.querySelector('#walkimage').addEventListener('click', () => {
             this.walk();
-            this.renderMessage(`${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+            this.renderMessage(`Thank you for the walk ${yourname}! My fitness is now at ${this.fitness}%`);
         });
     
         document.querySelector('#growupimage').addEventListener('click', () =>
         {
             this.growUp();
-            this.renderMessage(`My name is ${this.name} I am ${this.age} years old, hunger = ${this.hunger}, fitness = ${this.fitness}`);
+            this.renderMessage(`It's my birthday! I am ${this.age} years old today!`);
         });
         
         document.querySelector('#checkupimage').addEventListener('click', () =>
@@ -41,7 +41,7 @@ class Pet {
 
 
     getisAlive() {
-        return this.age <30 && this.hunger <10 && this.fitness >0;
+        return this.age <30 && this.hunger <100 && this.fitness >0;
     }
 
 initialiseHouse() { /* for the room image to be placed as background */
@@ -69,8 +69,8 @@ growUp() {
         this.renderMessage(`${this.name} is no longer alive :(`)
     };
 this.age += YEARSAGED;
-this.fitness -=3;
-this.hunger +=5;
+this.fitness -=30;
+this.hunger +=50;
 };
 
 checkUp() {
@@ -78,11 +78,11 @@ checkUp() {
         this.renderMessage(`${this.name} is no longer alive :(`)
         
     }
-        else if (this.fitness<=3 && this.hunger<5){
+        else if (this.fitness<=30 && this.hunger<50){
             return('I need a walk')
-        } else if (this.hunger>=5 && this.fitness>3){
+        } else if (this.hunger>=50 && this.fitness>30){
              return('I am hungry')
-            } else if (this.hunger>=5 && this.fitness<=3) {
+            } else if (this.hunger>=50 && this.fitness<=30) {
                 return('I am hungry AND I need a walk')
             } else {return('I feel great!')
         };
@@ -92,8 +92,8 @@ checkUp() {
     if (!this.getisAlive()){
         this.renderMessage(`${this.name} is no longer alive :(`)
     };
-      if ((this.fitness + 4)<=MAXIMUM_FITNESS){
-          this.fitness+= 4;
+      if ((this.fitness + 40)<=MAXIMUM_FITNESS){
+          this.fitness+= 40;
       } else {
           this.fitness = MAXIMUM_FITNESS;
       }
@@ -103,8 +103,8 @@ checkUp() {
     if (!this.getisAlive()){
         this.renderMessage(`${this.name} is no longer alive :(`)
     };
-      if((this.hunger-3)>=MINIMUM_HUNGER){
-          this.hunger-=3;
+      if((this.hunger-30)>=MINIMUM_HUNGER){
+          this.hunger-=30;
       } else {
           this.hunger = MINIMUM_HUNGER;
       }

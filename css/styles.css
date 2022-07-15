@@ -8,6 +8,7 @@ body{
     justify-content: center; /* children are center aligned horizontal*/
     align-items: center; /*vertical*/
     background-color: black;
+    font-family: 'Patrick-Hand', cursive;
 
 }
 
@@ -81,8 +82,8 @@ body{
 
 #rendermessage {
     position:  absolute;
-    font-family: sans-serif;
-    font-size: 18px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
     line-height: 24px;
     width: 300px;
     background: #fff;
@@ -125,25 +126,4 @@ body{
     
   }
   
-  #petname{
-    display:none;
-    position: fixed;
-    bottom:0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  }
-
-  #form-petname{
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-  }
-
-  #form-petname input[type=text]{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
+ 

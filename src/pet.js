@@ -33,7 +33,9 @@ class Pet {
         
         document.querySelector('#checkupimage').addEventListener('click', () =>
         {
-            this.renderMessage(`${this.checkUp()}`);
+            this.renderMessage(`${this.checkUp()}`
+            );
+            
         });
 
     };
@@ -66,7 +68,8 @@ renderFoodBowl() { /* empty food bowl image that stays there until filled for a 
 
 growUp() {
     if (!this.getisAlive()){
-        this.renderMessage(`${this.name} is no longer alive :(`)
+        this.renderMessage(`${this.name} is no longer alive :(`);
+        this.dead();
     };
 this.age += YEARSAGED;
 this.fitness -=30;
@@ -75,7 +78,8 @@ this.hunger +=50;
 
 checkUp() {
     if (!this.getisAlive()){
-        this.renderMessage(`${this.name} is no longer alive :(`)
+        this.renderMessage(`${this.name} is no longer alive :(`);
+        this.dead();
         
     }
         else if (this.fitness<=30 && this.hunger<50){
@@ -90,7 +94,8 @@ checkUp() {
   
   walk() {
     if (!this.getisAlive()){
-        this.renderMessage(`${this.name} is no longer alive :(`)
+        this.renderMessage(`${this.name} is no longer alive :(`);
+        this.dead();
     };
       if ((this.fitness + 40)<=MAXIMUM_FITNESS){
           this.fitness+= 40;
@@ -101,7 +106,8 @@ checkUp() {
 
  feedPet() {
     if (!this.getisAlive()){
-        this.renderMessage(`${this.name} is no longer alive :(`)
+        this.renderMessage(`${this.name} is no longer alive :(`);
+        this.dead();
     };
       if((this.hunger-30)>=MINIMUM_HUNGER){
           this.hunger-=30;
@@ -132,8 +138,19 @@ renderMessage (message) {
     setTimeout(() => {
         viewport.removeChild(messageElement);
     }, 3000)
+    
 };
 
+dead(){
+    document.querySelector("#viewport").style.background="url('images/dead.jpg')"
+    document.querySelector('#checkupimage').remove();
+    document.querySelector('#foodbowl').remove();
+    document.querySelector('#walkimage').remove();
+    document.querySelector('#growupimage').remove();
+    setTimeout(() => {
+        document.querySelector('#rendermessage').remove()
+    }, 3000)
+}
 
 };
 if(typeof module !== 'undefined' && module.exports){
@@ -145,7 +162,6 @@ if(typeof module !== 'undefined' && module.exports){
 /*To Do:
 - set up a stats list that is updated
 - make bluey blink
-- add something so you can name the pet at the start
+- make it so speech bubble disappears
 - add in when it is the birthday that confetti displays
-- update the pet to a ghost when they are dead
 */

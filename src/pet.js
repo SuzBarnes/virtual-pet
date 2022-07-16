@@ -164,4 +164,5 @@ if(typeof module !== 'undefined' && module.exports){
 - make bluey blink
 - make it so speech bubble disappears
 - add in when it is the birthday that confetti displays
+- make it so you can adopt/have a baby
 */

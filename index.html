@@ -34,10 +34,23 @@
 
     <script src="src/pet.js"></script>
     <script>
-        let yourname = prompt("Hey there! What is your name?")
-        let name = prompt("What is my name?");
+        let yourname = prompt("Hey there I am your new pet! What is your name?")
+        let name = prompt("What would you like to call me?");
         alert(`Hi ${yourname}! I love the name ${name}!`)
         const pet = new Pet(name);
+    </script>
+    <script>
+        let lem = document.getElementById("#viewport");
+
+        function openFullscreen() {
+            if (elem.requestFullscreen){
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen){
+                elm.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen){
+                elem.msRequestFullscreen();
+            }
+        }
     </script>
 </body>
 </html>

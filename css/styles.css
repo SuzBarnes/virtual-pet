@@ -1,13 +1,26 @@
-@media screen and (min-width:600px){
-    #viewport{
-        width:auto;
-        height:auto;
+@media screen and (max-width:800px){
+   
+
+    #foodbowl {
+        flex:100%;
+        right: 0px;
+        bottom: 0px;
     }
 
-    #foodbowl, #walkimage #growupimage, #checkupimage{
-        position:relative;
-        right: 0;
-        bottom: 0;
+    #walkimage{
+        flex:100%;
+        right: 0px;
+        bottom: 75px;
+    }
+     #growupimage{
+        flex:100%;
+        right: 0px;
+        bottom: 50px;
+    }
+    #checkupimage{
+        flex:100%;
+        right: 0px;
+        bottom: 100px;
     }
 }
 html {
@@ -17,6 +30,7 @@ html {
 body{
     height:100%;
     display: flex;
+    flex:auto;
     justify-content: center; /* children are center aligned horizontal*/
     align-items: center; /*vertical*/
     background-color: black;
@@ -26,11 +40,20 @@ body{
 
 #viewport{
     width: 975px;
-    height: 322px;
+    height: 422px;
     position: relative;
     overflow-x: auto;
     background-image: url('../images/room.png');
 }
+#toolbar{
+    background:white;
+    display: flex;
+    flex:auto;
+    position: absolute;
+    width: 975px;
+    height: 100px;
+    bottom: 0px;
+  }
 
 #pet{
     width: 254px;
@@ -47,7 +70,7 @@ body{
     height: 100px;
     background-image: url("../images/dog-food.svg");
     position:  absolute;
-    bottom: 20px;
+    right: 88%;
     
 }
 
@@ -64,8 +87,7 @@ body{
     height: 100px;
     background-image: url("../images/walking-the-dog.svg");
     position: absolute;
-    right: 10px;
-    bottom: 0px;
+    right: 60%;
   
 }
 #walkimage:hover{
@@ -81,8 +103,7 @@ body{
     height: 100px;
     background-image: url("../images/birthday-cake.svg");
     position: absolute;
-    right: 425px;
-    bottom: 115px;
+    right: 30%;
     
 }
 
@@ -92,6 +113,23 @@ body{
     background: rgb(161, 230, 122);
 }
 
+#checkupimage{
+  position: absolute;
+  background-image: url("../images/stethoscope-doctor.svg");
+  width: 100px;
+  height: 100px;
+  right: 0%;
+}
+
+#checkupimage:hover{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background: rgb(161, 230, 122);
+  
+}
 #rendermessage {
     position:  absolute;
     font-family: 'Patrick Hand', cursive;
@@ -119,23 +157,7 @@ body{
     bottom: -24px;
   }
 
-  #checkupimage{
-    position:absolute;
-    background-image: url("../images/stethoscope-doctor.svg");
-    width: 100px;
-    height: 100px;
-    top: 0px;
-    right: 0px;
-  }
 
-  #checkupimage:hover{
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
-    background: rgb(161, 230, 122);
-    
-  }
+  
   
  
